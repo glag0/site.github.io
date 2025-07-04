@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Сайт</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="header">
+    <div class="logo">🌐 Сайт glag v0.1</div>
+    <div class="auth-buttons" id="authArea">
+      <button onclick="showLogin()">Вход</button>
+      <button onclick="showRegister()">Регистрация</button>
+    </div>
+  </div>
+
+  <div class="offline-warning" id="offlineWarning" style="display:none;">
+    ⚠️ Сайт временно недоступен
+  </div>
+
+  <div class="menu" id="menuContainer"></div>
+
+  <div class="admin-panel" id="adminPanel" style="display: none;">
+    <h2>🛠 Админ-панель</h2>
+    <div class="admin-section">
+      <h4>Меню</h4>
+      <input type="text" id="newMenuItem" placeholder="Новый пункт меню" />
+      <button onclick="addMenuItem()">Добавить</button>
+      <button onclick="resetMenu()">Сброс меню</button>
+    </div>
+
+    <div class="admin-section">
+      <h4>Пользователи</h4>
+      <ul id="userList"></ul>
+    </div>
+
+    <div class="admin-section">
+      <h4>Сайт</h4>
+      <button onclick="toggleSite()">
+        <span id="siteStatus">Выключить сайт</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Модалки -->
+  <div class="modal" id="loginModal">
+    <div class="modal-box">
+      <h3>Вход</h3>
+      <input type="email" id="loginEmail" placeholder="Email"><br>
+      <input type="password" id="loginPassword" placeholder="Пароль"><br>
+      <button onclick="login()">Войти</button>
+      <button onclick="hideLogin()">Отмена</button>
+    </div>
+  </div>
+
+  <div class="modal" id="registerModal">
+    <div class="modal-box">
+      <h3>Регистрация</h3>
+      <input type="email" id="regEmail" placeholder="Email"><br>
+      <input type="password" id="regPassword" placeholder="Пароль"><br>
+      <button onclick="register()">Зарегистрироваться</button>
+      <button onclick="hideRegister()">Отмена</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
